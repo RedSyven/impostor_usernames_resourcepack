@@ -1,0 +1,61 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/snowball"
+    },
+    "cases": [
+      {
+        "when": ["firstperson_lefthand", "thirdperson_lefthand"],
+        "model": {
+          "type": "minecraft:select",
+          "property": "minecraft:main_hand",
+          "cases": [
+            {
+              "when": "left",
+              "model": { "type": "minecraft:model", "model": "minecraft:item/red_dye" }
+            },
+            {
+              "when": "right",
+              "model": { "type": "minecraft:model", "model": "minecraft:item/blaze_powder" }
+            }
+          ]
+        }
+      },
+      {
+        "when": ["firstperson_righthand", "thirdperson_righthand"],
+        "model": {
+          "type": "minecraft:select",
+          "property": "minecraft:main_hand",
+          "cases": [
+            {
+              "when": "left",
+              "model": { "type": "minecraft:model", "model": "minecraft:item/blaze_powder" }
+            },
+            {
+              "when": "right",
+              "model": { "type": "minecraft:model", "model": "minecraft:item/yellow_dye" }
+            }
+          ]
+        }
+      },
+      {
+        "when": "gui",
+        "model": {
+          "type": "minecraft:condition",
+          "property": "minecraft:selected",
+          "on_true": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/blaze_powder"
+          },
+          "on_false": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/snowball"
+          }
+        }
+      }
+    ]
+  }
+}
