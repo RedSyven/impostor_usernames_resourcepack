@@ -1,0 +1,8 @@
+{
+  "pack": {
+    "pack_format": 97.1,
+    "min_format": 70,
+    "max_format": 100,
+        "description": "Lightweight resource pack for hiding/covering usernames and player info, using negative space characters, within a custom font."
+    }
+}
